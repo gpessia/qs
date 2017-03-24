@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QS</title>
+  <style type="text/css">
+    body{
+      background-color: #82BC5C;
+    }
+    *{box-sizing: border-box;}
+    .card{
+      background-color: #fff;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 90vh;
+      margin: 5vh;
+      box-shadow:  0 0 20px 0 rgba(0, 0, 0, 0.2);
+    }
+    .elemento{
+      max-width: 50%;
+      font-size: 8vw;
+      font-family: sans-serif;
+    }
+  </style>
+</head>
+<body>
+<div class="card">
+  <div class="elemento">
+    <script type="text/javascript">
+      function euro(){
+        var prevTime = new Date(2017,2,24,9,30);  // M start from 0
+        var thisTime = new Date();              
+        var diff = thisTime.getTime() - prevTime.getTime();
+        var euro = (diff / (1000*60) * 0.00375).toFixed(5);
+        // console.log (euro);
+        document.getElementById("quanto").innerHTML = euro;
+        // return euro;
+      }
+      setInterval(euro, 10);
+    </script>
+    € <span id="quanto"></span>
+  </div>
+</div>
+</body>
+</html>
